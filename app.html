@@ -43,9 +43,12 @@
     +  '<a href="#"><img src="img/icon-back-button.png" /><strong>Back</strong></a>'
     + '</div>'
     function insertForm() {
-      document.getElementById('primary-container').style.height= "625px";
+      $('#primary-container').css("height","625px");
       document.getElementById('main-content').innerHTML =
-       '<div class="row survey">'
+        '<div class="row question">'
+      +    '<h4>Which Mobile topic would you like help with?</h4>'
+      +  '</div>'
+      +   '<div class="row survey">'
       +    '<form onSubmit="submitForm(event)">'
       +      '<div class="form-group">'
       +        '<label for="fullName">Full Name:*</label>'
@@ -168,6 +171,7 @@
     }
     function checkCA() {
       if ($('[name=state]').val() === "CA") {
+        $('#primary-container').css("height","680px");
         $('#conditional-form').html(
           '<div class="form-group">'
           +  '<label for="state">Was your phone purchased in CA?</label>'
